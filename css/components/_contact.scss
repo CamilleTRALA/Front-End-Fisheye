@@ -1,0 +1,96 @@
+.bg-modal-contact {
+  display: none;
+}
+
+.bg-modal-contact {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background: rgba(196, 196, 196, 0.4);
+}
+
+.content {
+  margin: 5% auto;
+  width: 100%;
+  max-width: 500px;
+
+  overflow: hidden;
+  position: relative;
+  color: black;
+  padding-top: 10px;
+  background: #db8876;
+  border-radius: 5px;
+
+  label {
+    color: #312e2e;
+    font-family: var(--font-default);
+    font-size: 36px;
+    font-weight: normal;
+    display: inline-block;
+    margin-bottom: 11px;
+
+
+  }
+}
+
+.text-control {
+    margin: 0;
+    padding: 8px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 20px;
+    height: 48px;
+  }
+
+.close-modal {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 32px;
+  height: 32px;
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(0.7);
+}
+
+.close-modal {
+  &:before,
+  &:after {
+    position: absolute;
+    left: 15px;
+    content: " ";
+    height: 33px;
+    width: 3px;
+    background-color: #fff;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+
+.modal-title {
+  font-size: 64px;
+}
+
+.content {
+    padding: 15px 4%;
+    margin: 15px auto;
+}
+
+.btn-submit{
+    font-size: 18px;
+    color: white;
+    width: auto;
+    height: auto;
+    padding: 23px 50px;
+    background: #911C1C;
+}
