@@ -1,18 +1,11 @@
-let jsonData = fetch("./data/photographers.json")
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => console.log(data));
-
 async function getPhotographers() {
-  // Penser à remplacer par les données récupérées dans le json
+  let jsonData = await fetch("./data/photographers.json");
+  jsonData = await jsonData.json();
+
   const photographers = jsonData.photographers;
   console.log(photographers);
 
-  // et bien retourner le tableau photographers seulement une fois
-  return {
-    photographers: [],
-  };
+  return { photographers: photographers };
 }
 
 async function displayData(photographers) {
