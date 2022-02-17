@@ -1,8 +1,6 @@
 function photographerFactory(data) {
   const { name, portrait, city, country, tagline, price, id } = data;
 
-  console.log(tagline);
-
   const picture = `assets/photographers/Photographers ID Photos/${portrait}`;
 
   function getUserCardDOM() {
@@ -31,5 +29,57 @@ function photographerFactory(data) {
 
     return link;
   }
-  return { name, picture, getUserCardDOM };
+
+  function getUserProfileDOM() {
+    const profile = document.createElement("div");
+    const h1 = document.createElement("h1");
+    const location = document.createElement("div");
+    const description = document.createElement("div");
+
+    profile.setAttribute("class", "photographer-profile");
+    h1.setAttribute("class", "photographer-name");
+    h1.textContent = name;
+    location.textContent = city + ", " + country;
+    description.textContent = tagline;
+
+    profile.appendChild(h1);
+    profile.appendChild(location);
+    profile.appendChild(description);
+
+    return profile;
+  }
+
+  function getUserContactDOM() {
+    const contact = document.createElement("button");
+
+    contact.setAttribute("class", "contact_button");
+    contact.setAttribute("onclick", `displayModal(${name})`);
+    
+    contact.textContent = "Contactez-moi";
+
+    return contact;
+  }
+
+  function getUserPhotoDOM() {
+    const img = document.createElement("img");
+
+    img.setAttribute("src", picture);
+    img.setAttribute("class", "id-photo");
+
+    return img;
+  }
+
+  return {
+    name,
+    picture,
+    getUserCardDOM,
+    getUserProfileDOM,
+    getUserContactDOM,
+    getUserPhotoDOM,
+  };
+}
+
+
+function contentFactory(data) {
+  
 }
