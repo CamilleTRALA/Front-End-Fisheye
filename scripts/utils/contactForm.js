@@ -1,10 +1,5 @@
-const modalOpen = document.querySelectorAll(".display-modal-contact");
-const modalClose = document.querySelectorAll(".close-modal");
-const modal = document.querySelector(".bg-modal-contact");
+const modal = document.querySelector("#contact-modal");
 const form = document.querySelector("form");
-
-modalOpen.forEach((btn) => btn.addEventListener("click", displayModal));
-modalClose.forEach((btn) => btn.addEventListener("click", closeModal));
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();

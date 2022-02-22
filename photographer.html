@@ -12,29 +12,116 @@
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="index.html">
+        <img src="assets/images/logo.png" class="logo"
+      /></a>
     </header>
     <main id="main">
+          <!-- Lightbox  -->
+    <div id="lightbox">
+      <div class="modal">
+        <div class="left-arrow" src="" alt="" /></div>
+        <div class="media-container"></div>
+        <div class="close"/></div>
+        <div class="right-arrow"/></div>
+      </div>
+    </div>
       <div class="photograph-header"></div>
+      <div class="photograph-sort-media"></div>
+      <div class="photograph-media"></div>
     </main>
 
-    <div id="contact_modal">
+    <!-- Modal de contact  -->
+    <div id="contact-modal">
       <div class="modal">
         <header>
           <h2>Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-        <form>
-          <div>
-            <label>Prénom</label>
-            <input />
+
+        <form
+          id="reserve"
+          name="reserve"
+          action="index.html"
+          method="get"
+          onsubmit="return validateContactModal();"
+        >
+          <div
+            class="formData"
+            data-error="Veuillez entrer 2 caractères ou plus pour le champ du nom."
+            data-error-visible="false"
+          >
+            <label for="first">Prénom</label><br />
+            <input
+              class="text-control"
+              type="text"
+              id="first"
+              name="first"
+              minlength="2"
+            /><br />
           </div>
-          <button class="contact_button">Envoyer</button>
+
+          <div
+            class="formData"
+            data-error="Veuillez entrer 2 caractères ou plus pour le champ du nom."
+            data-error-visible="false"
+          >
+            <label for="last">Nom</label><br />
+            <input
+              class="text-control"
+              type="text"
+              id="last"
+              name="last"
+            /><br />
+          </div>
+
+          <div
+            class="formData"
+            data-error="Veuillez entrer une adresse email valide."
+            data-error-visible="false"
+          >
+            <label for="email">Email</label><br />
+            <input
+              class="text-control"
+              type="email"
+              id="email"
+              name="email"
+            /><br />
+          </div>
+
+          <div
+            class="formData"
+            data-error="Veuillez entrer une adresse email valide."
+            data-error-visible="false"
+          >
+            <label for="message">Votre message</label><br />
+            <input
+              class="text-control"
+              type="text"
+              id="message"
+              name="message"
+            /><br />
+          </div>
+          <button class="contact-button">Envoyer</button>
         </form>
       </div>
     </div>
+
+    <!-- Lightbox  -->
+    <div id="lightbox">
+      <div class="modal">
+        <img class="left-arrow" src="" alt="" />
+        <div class="media-container"></div>
+        <img class="close" src="" alt="" />
+        <img class="right-arrow" src="" alt="" />
+      </div>
+    </div>
+
+    <script src="scripts/base/base.js"></script>
     <script src="scripts/factories/photographer.js"></script>
+    <script src="scripts/factories/media.js"></script>
     <script src="scripts/pages/photographer.js"></script>
     <script src="scripts/utils/contactForm.js"></script>
+    <script src="scripts/utils/lightbox.js"></script>
   </body>
 </html>

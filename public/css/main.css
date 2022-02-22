@@ -7,9 +7,25 @@
   background-color: #fafafa;
   height: 300px;
   margin: 0 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.contact_button {
+.photograph-header .container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact-button {
   font-size: 20px;
   font-weight: bold;
   color: white;
@@ -20,6 +36,92 @@
   background-color: #901c1c;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.photograph-header img {
+  height: 200px;
+  width: 200px;
+}
+
+.photograph-media {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  gap: 70px;
+  margin: 100px;
+}
+
+.photograph-media article {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.photograph-media article img,
+.photograph-media article video {
+  height: 300px;
+  width: 350px;
+  border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.photograph-media article video::after {
+  content: "";
+  width: 100px;
+  height: 100px;
+  position: relative;
+  left: 0;
+  top: 0;
+  background-image: url("../../assets/images/logo.png");
+  color: red;
+}
+
+.photograph-media article .description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #901c1c;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.photograph-media article .description h2 {
+  margin-right: auto;
+}
+
+.photograph-media article .description img {
+  width: 17.5px;
+  height: 18.35px;
+  -webkit-filter: invert(17%) sepia(97%) saturate(1876%) hue-rotate(351deg) brightness(87%) contrast(87%);
+          filter: invert(17%) sepia(97%) saturate(1876%) hue-rotate(351deg) brightness(87%) contrast(87%);
+}
+
+.logo::after {
+  content: "azeazeaze";
+  position: absolute;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  top: 12px;
+  left: 12px;
+  background-color: red;
+  color: #008766;
+  border-radius: 3px;
+}
+
+#contact-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background: rgba(196, 196, 196, 0.4);
 }
 
 .modal {
@@ -76,7 +178,7 @@ form {
 
 form label {
   color: #312e2e;
-  font-size: 36px;
+  font-size: 362px;
 }
 
 form div {
@@ -101,40 +203,7 @@ form input {
   border-radius: 5px;
 }
 
-.photograph-header {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.photograph-header img {
-  height: 200px;
-  width: 200px;
-}
-
-.bg-modal-contact {
-  display: none;
-}
-
-.bg-modal-contact {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  background: rgba(196, 196, 196, 0.4);
-}
-
-.content {
+.modal {
   margin: 5% auto;
   width: 100%;
   max-width: 500px;
@@ -146,7 +215,7 @@ form input {
   border-radius: 5px;
 }
 
-.content label {
+.modal label {
   color: #312e2e;
   font-family: var(--font-default);
   font-size: 36px;
@@ -211,6 +280,70 @@ form input {
   height: auto;
   padding: 23px 50px;
   background: #911C1C;
+}
+
+#lightbox {
+  height: 300px;
+}
+
+#lightbox .modal {
+  height: 300px;
+}
+
+.close {
+  position: absolute;
+  right: 42px;
+  top: 42px;
+  width: 42px;
+  height: 42px;
+}
+
+.close:before, .close:after {
+  position: absolute;
+  top: -4px;
+  left: 18px;
+  content: " ";
+  height: 50px;
+  width: 6px;
+  background-color: #911c1c;
+}
+
+.close:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.close:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.left-arrow {
+  position: absolute;
+  left: 32px;
+  top: 32px;
+  width: 30px;
+  height: 48px;
+}
+
+.left-arrow:before, .left-arrow:after {
+  position: absolute;
+  left: 12px;
+  content: " ";
+  height: 30px;
+  width: 6px;
+  background-color: #911c1c;
+}
+
+.left-arrow:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.left-arrow:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  bottom: 0;
 }
 
 * {

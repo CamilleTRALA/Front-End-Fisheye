@@ -1,0 +1,61 @@
+
+
+#lightbox {
+  // display: none;
+  height: 300px;
+
+  .modal {
+    height: 300px;
+  }
+}
+.close {
+  position: absolute;
+  right: 42px;
+  top: 42px;
+  width: 42px;
+  height: 42px;
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: -4px;
+    left: 18px;
+    content: " ";
+    height: 50px;
+    width: 6px;
+    background-color: #911c1c;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+
+.left-arrow {
+  position: absolute;
+  left: 32px;
+  top: 32px;
+  width: 30px;
+  height: 48px;
+
+  &:before,
+  &:after {
+    position: absolute;
+    left: 12px;
+    content: " ";
+    height: 30px;
+    width: 6px;
+    background-color: #911c1c;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+    bottom: 0;
+  }
+}

@@ -31,11 +31,13 @@ function photographerFactory(data) {
   }
 
   function getUserProfileDOM() {
+    const container = document.createElement("div");
     const profile = document.createElement("div");
     const h1 = document.createElement("h1");
     const location = document.createElement("div");
     const description = document.createElement("div");
 
+    container.setAttribute("class", "container");
     profile.setAttribute("class", "photographer-profile");
     h1.setAttribute("class", "photographer-name");
     h1.textContent = name;
@@ -45,28 +47,36 @@ function photographerFactory(data) {
     profile.appendChild(h1);
     profile.appendChild(location);
     profile.appendChild(description);
+    container.appendChild(profile);
 
-    return profile;
+    return container;
   }
 
   function getUserContactDOM() {
+    const container = document.createElement("div");
     const contact = document.createElement("button");
 
-    contact.setAttribute("class", "contact_button");
-    contact.setAttribute("onclick", `displayModal(${name})`);
-    
-    contact.textContent = "Contactez-moi";
+    container.setAttribute("class", "container");
+    contact.setAttribute("class", "contact-button");
+    contact.setAttribute("onclick", "displayModal()");
 
-    return contact;
+    contact.textContent = "Contactez-moi";
+    container.appendChild(contact);
+
+    return container;
   }
 
   function getUserPhotoDOM() {
+    const container = document.createElement("div");
     const img = document.createElement("img");
 
+    container.setAttribute("class", "container");
     img.setAttribute("src", picture);
     img.setAttribute("class", "id-photo");
 
-    return img;
+    container.appendChild(img);
+
+    return container;
   }
 
   return {
@@ -77,9 +87,4 @@ function photographerFactory(data) {
     getUserContactDOM,
     getUserPhotoDOM,
   };
-}
-
-
-function contentFactory(data) {
-  
 }

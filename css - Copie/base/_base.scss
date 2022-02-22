@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a,
+address {
+  all: unset;
+}
+
+a {
+  cursor: pointer;
+}
+
+.id-photo {
+  border-radius: 50%;
+  object-fit: cover;
+}
