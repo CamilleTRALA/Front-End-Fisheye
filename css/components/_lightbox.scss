@@ -1,17 +1,5 @@
-
-
-#lightbox {
-  // display: none;
-  height: 300px;
-
-  .modal {
-    height: 300px;
-  }
-}
 .close {
-  position: absolute;
-  right: 42px;
-  top: 42px;
+  position: relative;
   width: 42px;
   height: 42px;
 
@@ -34,10 +22,9 @@
   }
 }
 
-.left-arrow {
-  position: absolute;
-  left: 32px;
-  top: 32px;
+.left-arrow,
+.right-arrow {
+  position: relative;
   width: 30px;
   height: 48px;
 
@@ -50,12 +37,49 @@
     width: 6px;
     background-color: #911c1c;
   }
+}
 
+.left-arrow {
   &:before {
     transform: rotate(45deg);
   }
   &:after {
     transform: rotate(-45deg);
     bottom: 0;
+  }
+}
+
+.right-arrow {
+  &:before {
+    transform: rotate(-45deg);
+  }
+  &:after {
+    transform: rotate(45deg);
+    bottom: 0;
+  }
+}
+
+#lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(26, 39, 156, 0.4);
+
+  .lightbox-modal {
+    background-color: #db8876;
+    display: flex;
+    margin: auto;
+
+    .media-container {
+      width: 1050px;
+      height: 900px;
+      color: aqua;
+      background-color: aqua;
+    }
   }
 }

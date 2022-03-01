@@ -90,3 +90,16 @@
   color: #008766;
   border-radius: 3px;
 }
+
+.photograph-sort-media {
+  margin: 0 100px;
+  display: flex;
+  font-size: 18px;
+  .dropdown-title {
+    font-weight: bold;
+    margin-right: 30px;
+  }
+  .dropdown {
+    list-style: none;
+  }
+}

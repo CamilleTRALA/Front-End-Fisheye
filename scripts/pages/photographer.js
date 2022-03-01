@@ -36,6 +36,10 @@ async function displayHeader(photographer) {
 async function displayMedia(media) {
   const photographMedia = document.querySelector(".photograph-media");
 
+  while (photographMedia.firstChild) {
+    photographMedia.removeChild(photographMedia.firstChild);
+  }
+
   media.forEach((media) => {
     const mediaModel = mediaFactory(media);
     const mediaCardDOM = mediaModel.getMediaCardDOM();
@@ -51,6 +55,32 @@ async function updateContactModal(photographer) {
   h2.textContent += `\n ${name}`;
 }
 
+function addEventListeners() {
+  const contactBtn = document.querySelector(".contact-button");
+  const mediaAll = document.querySelectorAll(
+    ".photograph-media >article >img:first-of-type,.photograph-media >article >video"
+  );
+
+  contactBtn.addEventListener("click", displayModal);
+
+  for (let i = 0; i < mediaAll.length; i++) {
+    mediaAll[i].addEventListener("click", function () {
+      displayLightbox(i, media);
+    });
+  }
+
+  const closeLightbox = document.querySelector(".close-lightbox");
+  const leftLightbox = document.querySelector(".left-arrow");
+  const rightLightbox = document.querySelector(".right-arrow");
+
+  closeLightbox.addEventListener("click", closeLightbox);
+  leftLightbox.addEventListener("click", function () {
+    lightboxScrollMedia("backward");
+  });
+
+  // lightboxScrollMedia
+}
+
 async function init() {
   let jsonData = await fetch("./data/photographers.json");
   jsonData = await jsonData.json();
@@ -63,6 +93,7 @@ async function init() {
   displayHeader(photographer);
   displayMedia(media);
   updateContactModal(photographer);
+  addEventListeners();
 }
 
 init();

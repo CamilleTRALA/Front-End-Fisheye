@@ -58,7 +58,6 @@ function photographerFactory(data) {
 
     container.setAttribute("class", "container");
     contact.setAttribute("class", "contact-button");
-    contact.setAttribute("onclick", "displayModal()");
 
     contact.textContent = "Contactez-moi";
     container.appendChild(contact);

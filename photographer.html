@@ -17,18 +17,26 @@
       /></a>
     </header>
     <main id="main">
-          <!-- Lightbox  -->
-    <div id="lightbox">
-      <div class="modal">
-        <div class="left-arrow" src="" alt="" /></div>
-        <div class="media-container"></div>
-        <div class="close"/></div>
-        <div class="right-arrow"/></div>
+      <!-- Lightbox  -->
+      <div id="lightbox">
+        <div class="lightbox-modal">
+          <div class="left-arrow"></div>
+          <div class="media-container"></div>
+          <div class="close close-lightbox"></div>
+          <div class="right-arrow"></div>
+        </div>
       </div>
-    </div>
-      <div class="photograph-header"></div>
-      <div class="photograph-sort-media"></div>
-      <div class="photograph-media"></div>
+      <section class="photograph-header"></section>
+      <section class="photograph-sort-media">
+        <div class="dropdown-title">Trier par</div>
+
+        <ul class="dropdown" selected="date" descending="true">
+          <li id="sort-popularity">Popularité</li>
+          <li id="sort-date">Date</li>
+          <li id="sort-title">Titre</li>
+        </ul>
+      </section>
+      <section class="photograph-media"></section>
     </main>
 
     <!-- Modal de contact  -->
@@ -36,7 +44,7 @@
       <div class="modal">
         <header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img class="close-modal" src="assets/icons/close.svg" />
         </header>
 
         <form
@@ -102,18 +110,8 @@
               name="message"
             /><br />
           </div>
-          <button class="contact-button">Envoyer</button>
+          <button class="send-button">Envoyer</button>
         </form>
-      </div>
-    </div>
-
-    <!-- Lightbox  -->
-    <div id="lightbox">
-      <div class="modal">
-        <img class="left-arrow" src="" alt="" />
-        <div class="media-container"></div>
-        <img class="close" src="" alt="" />
-        <img class="right-arrow" src="" alt="" />
       </div>
     </div>
 
@@ -122,6 +120,7 @@
     <script src="scripts/factories/media.js"></script>
     <script src="scripts/pages/photographer.js"></script>
     <script src="scripts/utils/contactForm.js"></script>
+    <script src="scripts/utils/sorting.js"></script>
     <script src="scripts/utils/lightbox.js"></script>
   </body>
 </html>

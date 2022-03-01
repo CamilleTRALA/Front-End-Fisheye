@@ -5,6 +5,10 @@ async function getjsonData() {
   return jsonData;
 }
 
-function getPhotographerName(photographerId, jsonData){
-
-}
+// function mediaPath(media) {
+//   if (image) {
+//     const path = `assets/photographers/${media.photographerId}/${media.image}`;
+//   } else if (video) {
+//     const path = `assets/photographers/${media.photographerId}/${media.video}`;
+//   }
+// }

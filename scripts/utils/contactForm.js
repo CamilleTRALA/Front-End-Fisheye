@@ -1,15 +1,12 @@
-const modal = document.querySelector("#contact-modal");
-const form = document.querySelector("form");
+const contactModal = document.querySelector("#contact-modal");
+const close = document.querySelector(".close-modal");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  checkInputs();
-});
+close.addEventListener("click", closeModal);
 
 function displayModal() {
-  modal.style.display = "block";
+  contactModal.style.display = "block";
 }
 
 function closeModal() {
-  modal.style.display = "none";
+  contactModal.style.display = "none";
 }
