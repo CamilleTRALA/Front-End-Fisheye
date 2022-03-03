@@ -62,6 +62,8 @@ function photographerFactory(data) {
     contact.textContent = "Contactez-moi";
     container.appendChild(contact);
 
+    contact.addEventListener("click", displayModal);
+
     return container;
   }
 
@@ -78,6 +80,34 @@ function photographerFactory(data) {
     return container;
   }
 
+  function getUserLikesDOM() {
+    const likesContainer = document.createElement("div");
+    const hearth = document.createElement("img");
+    const likesNumber = document.createElement("div");
+    let likesTotal = 0;
+
+    likesContainer.setAttribute("class", "likes-total");
+    hearth.setAttribute("src", "assets/icons/heart-solid.svg");
+    hearth.setAttribute("class", "hearth");
+    likesNumber.setAttribute("class", "likes-total-number");
+
+    media.forEach((element) => (likesTotal += element.likes));
+    likesNumber.textContent = likesTotal;
+
+    likesContainer.appendChild(likesNumber);
+    likesContainer.appendChild(hearth);
+
+    return likesContainer;
+  }
+
+  function getUserPriceDOM() {
+    const priceDOM = document.createElement("div");
+    priceDOM.setAttribute("class", "price");
+    priceDOM.textContent = price + "€ / jour";
+
+    return priceDOM;
+  }
+
   return {
     name,
     picture,
@@ -85,5 +115,7 @@ function photographerFactory(data) {
     getUserProfileDOM,
     getUserContactDOM,
     getUserPhotoDOM,
+    getUserLikesDOM,
+    getUserPriceDOM,
   };
 }

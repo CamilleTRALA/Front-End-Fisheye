@@ -1,0 +1,25 @@
+.quantities {
+  position: fixed;
+  bottom: 0;
+  right: 3vw;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #db8876;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  > * {
+    padding: 20px 30px;
+  }
+  .likes-total {
+    display: flex;
+    align-items: center;
+    img {
+      width: 17.5px;
+      height: 18.35px;
+      margin-left: 10px;
+    }
+  }
+}

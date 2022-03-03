@@ -1,37 +1,52 @@
-const lightbox = document.querySelector("#lightbox");
-
-function displayLightbox(i, media) {
+function displayLightbox(event) {
+  const lightbox = document.querySelector("#lightbox");
+  const target = event.currentTarget;
+  const index = target.dataset.index;
+  const close = document.querySelector(".close-lightbox");
+  const left = document.querySelector(".left-arrow");
+  const right = document.querySelector(".right-arrow");
   lightbox.style.display = "block";
+  lightboxDisplayMedia(index);
+
+  close.addEventListener("click", closeLightbox);
+  left.addEventListener("click", lightboxLeft);
+  right.addEventListener("click", lightboxRight);
+}
+
+function lightboxDisplayMedia(index) {
+  if (!media[index]) {
+    return;
+  }
   const mediaContainer = document.querySelector(".media-container");
+  const lightboxModel = lightboxFactory(media[index]);
+  const content = lightboxModel.getLightboxMedia();
 
-  const img = document.createElement("img");
-
-  lightboxDisplayMedia();
-
-  function lightboxDisplayMedia() {
-    const mediaModel = mediaFactory(media[i]);
-    const content = mediaModel.getLightboxMedia();
-
-    mediaContainer.appendChild(content);
+  while (mediaContainer.firstChild) {
+    mediaContainer.removeChild(mediaContainer.firstChild);
   }
 
-  function lightboxScrollMedia(direction) {
-    if (direction === "forward") {
-      i += 1;
-    } else if (direction === "backward") {
-      i -= 1;
-    }
+  mediaContainer.appendChild(content);
+}
 
-    lightboxDisplayMedia();
-  }
+function lightboxLeft() {
+  const lightboxMedia = document.querySelector(
+    "#lightbox .content img, #lightbox .content video "
+  );
+  index = lightboxMedia.dataset.index;
+  lightboxDisplayMedia(Number(index) - 1);
+}
+
+function lightboxRight() {
+  const lightboxMedia = document.querySelector(
+    "#lightbox .content img, #lightbox .content video "
+  );
+  index = lightboxMedia.dataset.index;
+  lightboxDisplayMedia(Number(index) + 1);
 }
 
 function closeLightbox() {
   const mediaContainer = document.querySelector(".media-container");
-
   lightbox.style.display = "none";
-
-  console.log("azeazeaazeaze")
   while (mediaContainer.firstChild) {
     mediaContainer.removeChild(mediaContainer.firstChild);
   }

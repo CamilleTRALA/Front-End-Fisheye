@@ -44,41 +44,33 @@ async function displayMedia(media) {
     const mediaModel = mediaFactory(media);
     const mediaCardDOM = mediaModel.getMediaCardDOM();
     photographMedia.appendChild(mediaCardDOM);
+    mediaCardDOM
+      .querySelector("video, img")
+      .addEventListener("click", displayLightbox);
   });
 }
 
-async function updateContactModal(photographer) {
+async function completeContactModalDOM(photographer) {
   const h2 = document.querySelector("#contact-modal h2");
+  const nameDOM = document.querySelector(".contact-name");
+  const br = document.createElement("br");
   const photographerModel = photographerFactory(photographer);
   const name = photographerModel.name;
 
-  h2.textContent += `\n ${name}`;
+  nameDOM.textContent = ` ${name}`;
+
+  const close = document.querySelector(".close-modal");
+  close.addEventListener("click", closeModal);
 }
 
-function addEventListeners() {
-  const contactBtn = document.querySelector(".contact-button");
-  const mediaAll = document.querySelectorAll(
-    ".photograph-media >article >img:first-of-type,.photograph-media >article >video"
-  );
-
-  contactBtn.addEventListener("click", displayModal);
-
-  for (let i = 0; i < mediaAll.length; i++) {
-    mediaAll[i].addEventListener("click", function () {
-      displayLightbox(i, media);
-    });
-  }
-
-  const closeLightbox = document.querySelector(".close-lightbox");
-  const leftLightbox = document.querySelector(".left-arrow");
-  const rightLightbox = document.querySelector(".right-arrow");
-
-  closeLightbox.addEventListener("click", closeLightbox);
-  leftLightbox.addEventListener("click", function () {
-    lightboxScrollMedia("backward");
-  });
-
-  // lightboxScrollMedia
+function displayQuantities() {
+  const quantities = document.querySelector(".quantities");
+  const photographerModel = photographerFactory(photographer);
+  likes = photographerModel.getUserLikesDOM();
+  const price = photographerModel.getUserPriceDOM();
+  console.log(likes);
+  quantities.appendChild(likes);
+  quantities.appendChild(price);
 }
 
 async function init() {
@@ -92,8 +84,8 @@ async function init() {
 
   displayHeader(photographer);
   displayMedia(media);
-  updateContactModal(photographer);
-  addEventListeners();
+  displayQuantities();
+  completeContactModalDOM(photographer);
 }
 
 init();

@@ -8,16 +8,19 @@ function mediaFactory(data) {
     const h2 = document.createElement("h2");
     const likesCounter = document.createElement("div");
     const hearth = document.createElement("img");
+    const index = media.indexOf(data)
 
     if (image) {
       const path = `assets/photographers/${photographerId}/${image}`;
       const img = document.createElement("img");
       img.setAttribute("src", path);
+      img.setAttribute("data-index", index);
       article.appendChild(img);
     } else if (video) {
       const path = `assets/photographers/${photographerId}/${video}`;
       const vid = document.createElement("video");
       vid.setAttribute("src", path);
+      vid.setAttribute("data-index", index);
       article.appendChild(vid);
     }
 
@@ -34,36 +37,8 @@ function mediaFactory(data) {
     return article;
   }
 
-  function getLightboxMedia() {
-    const content = document.createElement("div");
-    const  name = document.createElement("div");
-    content.setAttribute("class", "content");
-    name.setAttribute("class", "lightbox-name");
-    name.textContent = name
-
-    console.log("getLightboxMedia", image);
-
-    if (image) {
-      const path = `assets/photographers/${photographerId}/${image}`;
-      const img = document.createElement("img");
-      img.setAttribute("src", path);
-      content.appendChild(img);
-      console.log("getLightboxMedia", "img");
-    } else if (video) {
-      const path = `assets/photographers/${photographerId}/${video}`;
-      const vid = document.createElement("video");
-      vid.setAttribute("src", path);
-      content.appendChild(vid);
-      console.log("getLightboxMedia","video");
-    }
-
-    content.appendChild(name);
-
-    return content;
-  }
-
   return {
     getMediaCardDOM,
-    getLightboxMedia,
   };
 }
+

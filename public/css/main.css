@@ -66,17 +66,6 @@
      object-fit: cover;
 }
 
-.photograph-media article video::after {
-  content: "";
-  width: 100px;
-  height: 100px;
-  position: relative;
-  left: 0;
-  top: 0;
-  background-image: url("../../assets/images/logo.png");
-  color: red;
-}
-
 .photograph-media article .description {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -141,7 +130,7 @@
   background: rgba(196, 196, 196, 0.4);
 }
 
-.modal {
+#contact-modal .modal {
   border-radius: 5px;
   background-color: #db8876;
   width: 50%;
@@ -162,24 +151,30 @@
   margin: auto;
 }
 
-.modal header {
+#contact-modal .modal header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+  height: auto;
+  display: block;
 }
 
-.modal header img {
+#contact-modal .modal header img {
   cursor: pointer;
 }
 
-.modal header h2 {
+#contact-modal .modal header h2 {
   font-size: 64px;
   font-weight: normal;
-  text-align: center;
 }
 
-form {
+#contact-modal .modal header .contact-name {
+  font-size: 64px;
+  font-weight: normal;
+}
+
+#contact-modal form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -193,12 +188,14 @@ form {
           align-items: flex-start;
 }
 
-form label {
+#contact-modal form label {
   color: #312e2e;
-  font-size: 362px;
+  font-size: 36px;
+  font-weight: normal;
+  display: inline-block;
 }
 
-form div {
+#contact-modal form div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -210,35 +207,17 @@ form div {
   -webkit-box-align: self-start;
       -ms-flex-align: self-start;
           align-items: self-start;
-  margin-bottom: 26px;
 }
 
-form input {
+#contact-modal form input {
   width: 100%;
   height: 68px;
   border: none;
   border-radius: 5px;
 }
 
-.modal {
-  margin: 5% auto;
-  width: 100%;
-  max-width: 500px;
-  overflow: hidden;
-  position: relative;
-  color: black;
-  padding-top: 10px;
-  background: #db8876;
-  border-radius: 5px;
-}
-
-.modal label {
-  color: #312e2e;
-  font-family: var(--font-default);
-  font-size: 36px;
-  font-weight: normal;
-  display: inline-block;
-  margin-bottom: 11px;
+#contact-modal form textarea {
+  height: auto;
 }
 
 .text-control {
@@ -296,7 +275,7 @@ form input {
   width: auto;
   height: auto;
   padding: 23px 50px;
-  background: #911C1C;
+  background: #911c1c;
 }
 
 .close {
@@ -392,11 +371,54 @@ form input {
   background-color: aqua;
 }
 
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+#lightbox .lightbox-modal .media-container .content img {
+  width: 1050px;
+  height: 900px;
+}
+
+.quantities {
+  position: fixed;
+  bottom: 0;
+  right: 3vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #db8876;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.quantities > * {
+  padding: 20px 30px;
+}
+
+.quantities .likes-total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.quantities .likes-total img {
+  width: 17.5px;
+  height: 18.35px;
+  margin-left: 10px;
+}
+
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 a,
