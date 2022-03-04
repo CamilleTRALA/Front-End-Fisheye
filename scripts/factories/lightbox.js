@@ -6,7 +6,7 @@ function lightboxFactory(data) {
     const name = document.createElement("div");
     content.setAttribute("class", "content");
     name.setAttribute("class", "lightbox-name");
-    name.textContent = name;
+    name.textContent = title;
     const index = media.indexOf(data);
 
     if (image) {
@@ -20,6 +20,8 @@ function lightboxFactory(data) {
       const vid = document.createElement("video");
       vid.setAttribute("src", path);
       vid.setAttribute("data-index", index);
+      vid.setAttribute("controls","");
+
       content.appendChild(vid);
     }
 

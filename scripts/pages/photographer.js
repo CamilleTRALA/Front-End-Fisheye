@@ -45,23 +45,12 @@ async function displayMedia(media) {
     const mediaCardDOM = mediaModel.getMediaCardDOM();
     photographMedia.appendChild(mediaCardDOM);
     mediaCardDOM
-      .querySelector("video, img")
+      .querySelector(".video-container, .image-container")
       .addEventListener("click", displayLightbox);
   });
 }
 
-async function completeContactModalDOM(photographer) {
-  const h2 = document.querySelector("#contact-modal h2");
-  const nameDOM = document.querySelector(".contact-name");
-  const br = document.createElement("br");
-  const photographerModel = photographerFactory(photographer);
-  const name = photographerModel.name;
 
-  nameDOM.textContent = ` ${name}`;
-
-  const close = document.querySelector(".close-modal");
-  close.addEventListener("click", closeModal);
-}
 
 function displayQuantities() {
   const quantities = document.querySelector(".quantities");

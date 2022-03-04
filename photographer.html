@@ -37,8 +37,8 @@
       <div class="lightbox-modal">
         <div class="left-arrow"></div>
         <div class="media-container"></div>
-        <div class="close close-lightbox"></div>
         <div class="right-arrow"></div>
+        <div class="close close-lightbox red"></div>
       </div>
     </div>
 
@@ -48,7 +48,7 @@
         <header>
           <h2>Contactez-moi</h2>
           <div class="contact-name"></div>
-          <img class="close-modal" src="assets/icons/close.svg" />
+          <div class="close contact-close white"></div>
         </header>
 
         <form
@@ -58,10 +58,7 @@
           method="get"
           onsubmit="return true;"
         >
-          <div
-            class="formData"
-
-          >
+          <div class="formData">
             <label for="first">Prénom</label>
             <input
               class="text-control"
@@ -72,26 +69,17 @@
             />
           </div>
 
-          <div
-            class="formData"
-
-          >
+          <div class="formData">
             <label for="last">Nom</label>
             <input class="text-control" type="text" id="last" name="last" />
           </div>
 
-          <div
-            class="formData"
-
-          >
+          <div class="formData">
             <label for="email">Email</label>
             <input class="text-control" type="email" id="email" name="email" />
           </div>
 
-          <div
-            class="formData"
-
-          >
+          <div class="formData">
             <label for="message">Votre message</label>
             <textarea
               class="text-control"
@@ -102,7 +90,7 @@
               rows="7"
             ></textarea>
           </div>
-          <button class="send-button">Envoyer</button>
+          <button class="btn-submit">Envoyer</button>
         </form>
       </div>
     </div>

@@ -1,16 +1,20 @@
+@import "./utils/mixins";
 @import "./layouts/photographer";
 @import "./components/contact";
 @import "./components/lightbox";
 @import "./components/quantities";
+@import "./components/icons";
+@import "./components/sort";
 @import "./base/base";
-
-
+@import "./base/reset";
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Roboto&family=Shrikhand&display=swap");
 
 body {
   font-family: "DM Sans", sans-serif;
   margin: 0;
+  max-width: 1700px;
+  margin: auto;
 }
 
 header {

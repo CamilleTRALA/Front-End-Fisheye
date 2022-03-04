@@ -5,7 +5,7 @@ function displayLightbox(event) {
   const close = document.querySelector(".close-lightbox");
   const left = document.querySelector(".left-arrow");
   const right = document.querySelector(".right-arrow");
-  lightbox.style.display = "block";
+  lightbox.style.display = "flex";
   lightboxDisplayMedia(index);
 
   close.addEventListener("click", closeLightbox);
