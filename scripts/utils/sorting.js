@@ -26,16 +26,31 @@ function sort(media, factor) {
       a.title.toLowerCase() >= b.title.toLowerCase() ? 1 : -1
     );
   }
-  if (dropdown.getAttribute("selected") != factor) {
-    dropdown.setAttribute("descending", "");
-
+  if (dropdown.dataset.selected != factor) {
+    dropdown.dataset.decreasing = "";
   }
-  if (dropdown.getAttribute("descending")) {
-    dropdown.setAttribute("descending", "");
+  if (dropdown.dataset.decreasing) {
+    dropdown.dataset.decreasing = "";
     media = media.reverse();
   } else {
-    dropdown.setAttribute("descending", "true");
+    dropdown.dataset.decreasing = "true";
   }
-  dropdown.setAttribute("selected", factor);
+  dropdown.dataset.selected = factor;
   return media;
+}
+
+// dropdown.addEventListener("click", displayDropdown);
+
+// function displayDropdown() {
+//   popularity.style.display = "block";
+//   date.style.display = "block";
+//   title.style.display = "block";
+// }
+
+function displaySelected() {
+  const selected = document.querySelector(`.${dropdown.dataset.selected}`);
+  popularity.style.display = "none";
+  date.style.display = "none";
+  title.style.display = "none";
+  selected.style.display = "block";
 }

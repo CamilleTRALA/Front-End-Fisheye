@@ -15,6 +15,24 @@
   }
 }
 
+.photographer-profile {
+  > * {
+    margin: 20px;
+  }
+  *:nth-child(1) {
+    font-size: 64px;
+    color: #d3573c;
+  }
+  *:nth-child(2) {
+    font-size: 24px;
+    color: #901c1c;
+  }
+  *:nth-child(3) {
+    font-size: 18px;
+    color: #525252;
+  }
+}
+
 .contact-button {
   font-size: 20px;
   font-weight: bold;
@@ -37,7 +55,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 70px;
-  margin: 100px;
+  margin: 50px 100px;
 
   article {
     justify-self: center;

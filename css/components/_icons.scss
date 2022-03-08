@@ -25,7 +25,7 @@
 .close.red {
   &:before,
   &:after {
-    background-color: #911C1C;
+    background-color: #911c1c;
   }
 }
 .close.white {
@@ -69,5 +69,39 @@
   &:after {
     transform: rotate(45deg);
     bottom: 0;
+  }
+}
+
+.vertical-arrow {
+  position: relative;
+  width: 16px;
+  height: 10px;
+
+  &:before,
+  &:after {
+    position: absolute;
+    right: 4px;
+    content: " ";
+    height: 10px;
+    width: 3px;
+    background-color: #911c1c;
+  }
+}
+
+.vertical-arrow {
+  &:before {
+    transform: rotate(45deg);
+    left: 4px;
+  }
+  &:after {
+    transform: rotate(-45deg);
+    right: 4px;
+  }
+}
+
+.vertical-arrow.white {
+  &:before,
+  &:after {
+    background-color: white;
   }
 }
