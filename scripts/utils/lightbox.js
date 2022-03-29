@@ -11,6 +11,7 @@ function displayLightbox(event) {
   close.addEventListener("click", closeLightbox);
   left.addEventListener("click", lightboxLeft);
   right.addEventListener("click", lightboxRight);
+  document.addEventListener("keydown", controlKeyboard);
 }
 
 function lightboxDisplayMedia(index) {
@@ -49,5 +50,21 @@ function closeLightbox() {
   lightbox.style.display = "none";
   while (mediaContainer.firstChild) {
     mediaContainer.removeChild(mediaContainer.firstChild);
+  }
+  document.removeEventListener("keydown", controlKeyboard);
+}
+
+function controlKeyboard(e) {
+  console.log(e.key);
+  switch (e.key) {
+    case "ArrowLeft":
+      lightboxLeft();
+      break;
+    case "ArrowRight":
+      lightboxRight();
+      break;
+    case "Escape":
+      closeLightbox();
+      break;
   }
 }

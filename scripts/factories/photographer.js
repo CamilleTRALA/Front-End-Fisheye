@@ -13,6 +13,7 @@ function photographerFactory(data) {
     const link = document.createElement("a");
 
     img.setAttribute("src", picture);
+    img.setAttribute("alt", "");
     img.setAttribute("class", "id-photo");
     h2.textContent = name;
     location.textContent = city + ", " + country;
@@ -73,6 +74,7 @@ function photographerFactory(data) {
 
     container.setAttribute("class", "container");
     img.setAttribute("src", picture);
+    img.setAttribute("alt", name);
     img.setAttribute("class", "id-photo");
 
     container.appendChild(img);
@@ -89,6 +91,7 @@ function photographerFactory(data) {
     likesContainer.setAttribute("class", "likes-total");
     hearth.setAttribute("src", "assets/icons/heart-solid.svg");
     hearth.setAttribute("class", "hearth");
+    hearth.setAttribute("alt", "hearth");
     likesNumber.setAttribute("class", "likes-total-number");
 
     media.forEach((element) => (likesTotal += element.likes));

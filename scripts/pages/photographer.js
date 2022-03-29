@@ -1,3 +1,5 @@
+let likesCliked = 0;
+
 async function getPhotographerID() {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
@@ -44,13 +46,15 @@ async function displayMedia(media) {
     const mediaModel = mediaFactory(media);
     const mediaCardDOM = mediaModel.getMediaCardDOM();
     photographMedia.appendChild(mediaCardDOM);
-    mediaCardDOM
-      .querySelector(".video-container, .image-container")
-      .addEventListener("click", displayLightbox);
+    const targetMedia = mediaCardDOM.querySelector(
+      ".video-container, .image-container"
+    );
+
+    targetMedia.addEventListener("click", displayLightbox);
+
+    targetMedia.addEventListener("keyup", displayLightbox);
   });
 }
-
-
 
 function displayQuantities() {
   const quantities = document.querySelector(".quantities");
@@ -60,6 +64,19 @@ function displayQuantities() {
   console.log(likes);
   quantities.appendChild(likes);
   quantities.appendChild(price);
+}
+
+function likesIncrease(e) {
+  console.log(e.target);
+  const target = e.target;
+  const likesCounter = target.parentNode.querySelector(".likes");
+
+  likesCounter.textContent = Number(likesCounter.textContent) + 1;
+
+  likesCliked += 1;
+
+  const likesTotal = document.querySelector(".likes-total-number");
+  likesTotal.textContent = Number(likesTotal.textContent) + 1;
 }
 
 async function init() {

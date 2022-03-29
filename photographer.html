@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="fr">
+  <head role="banner">
     <link href="./public/css/main.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
@@ -13,7 +13,7 @@
   <body>
     <header>
       <a href="index.html">
-        <img src="assets/images/logo.png" class="logo"
+        <img src="assets/images/logo.png" class="logo" alt="Fisheye"
       /></a>
     </header>
     <main id="main">
@@ -24,16 +24,16 @@
 
         <!-- DROPDOWN  -->
 
-        <ul class="dropdown" data-selected="date" data-decreasing="true">
-          <li id="sort-popularity">
+        <ul class="dropdown"  aria-haspopup="true"  data-selected="date" data-decreasing="true">
+          <li id="sort-popularity" tabindex="0">
             <div class="text">Popularité</div>
             <div class="vertical-arrow white"></div>
           </li>
-          <li id="sort-date">
+          <li id="sort-date" tabindex="0">
             <div class="text">Date</div>
             <div class="vertical-arrow white"></div>
           </li>
-          <li id="sort-title">
+          <li id="sort-title" tabindex="0">
             <div class="text">Titre</div>
             <div class="vertical-arrow white"></div>
           </li>

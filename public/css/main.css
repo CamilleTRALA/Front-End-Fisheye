@@ -596,17 +596,19 @@
 
 .dropdown:hover #sort-popularity,
 .dropdown:hover #sort-date,
-.dropdown:hover #sort-title {
+.dropdown:hover #sort-title, .dropdown:focus #sort-popularity,
+.dropdown:focus #sort-date,
+.dropdown:focus #sort-title {
   display: block;
 }
 
-.dropdown:hover li {
+.dropdown:hover li, .dropdown:focus li {
   border-bottom-style: solid;
   border-width: 2px;
   border-color: white;
 }
 
-.dropdown:hover li:last-child {
+.dropdown:hover li:last-child, .dropdown:focus li:last-child {
   border-bottom-style: none;
 }
 
@@ -632,6 +634,10 @@ a {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+*:focus {
+  background-color: aqua;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 

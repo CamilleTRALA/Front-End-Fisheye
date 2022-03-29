@@ -86,7 +86,8 @@
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     #sort-popularity,
     #sort-date,
     #sort-title {
