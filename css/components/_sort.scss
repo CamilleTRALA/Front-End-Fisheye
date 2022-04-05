@@ -16,6 +16,12 @@
   position: absolute;
   left: 100px;
   z-index: 1;
+  
+  &:focus-within {
+    * {
+      display: block;
+    }
+  }
 
   li {
     position: relative;
@@ -87,7 +93,7 @@
   }
 
   &:hover,
-  &:focus {
+  &[data-show="true"] {
     #sort-popularity,
     #sort-date,
     #sort-title {

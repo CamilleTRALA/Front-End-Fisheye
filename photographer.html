@@ -10,7 +10,7 @@
     />
     <title>Fisheye - photographe</title>
   </head>
-  <body>
+  <body aria-hidden="false">
     <header>
       <a href="index.html">
         <img src="assets/images/logo.png" class="logo" alt="Fisheye"
@@ -59,7 +59,7 @@
         <header>
           <h2>Contactez-moi</h2>
           <div class="contact-name"></div>
-          <div class="close contact-close white"></div>
+          <div class="close contact-close white" tabindex="0"></div>
         </header>
 
         <form
@@ -101,7 +101,7 @@
               rows="7"
             ></textarea>
           </div>
-          <button class="btn-submit">Envoyer</button>
+          <button class="btn-submit" type="submit">Envoyer</button>
         </form>
       </div>
     </div>

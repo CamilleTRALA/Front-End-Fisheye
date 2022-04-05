@@ -2,6 +2,10 @@ const contactModal = document.querySelector("#contact-modal");
 
 const contactForm = document.querySelector("#contact-form");
 
+const body = document.querySelector("body");
+
+const modalCloseBtn = document.querySelector(".contact-close");
+
 contactForm.onsubmit = async (e) => {
   e.preventDefault();
   console.log(contactForm.first.value.trim());
@@ -28,8 +32,24 @@ async function completeContactModalDOM(photographer) {
 
 function displayModal() {
   contactModal.style.display = "block";
+  body.setAttribute("aria-hidden", "true");
+  contactModal.setAttribute("aria-hidden", "false");
+  modalCloseBtn.focus();
+  console.log(modalCloseBtn);
+
+  document.addEventListener("keydown", controlKeyboardModal);
 }
 
 function closeModal() {
   contactModal.style.display = "none";
+  document.removeEventListener("keydown", controlKeyboardModal);
+}
+
+function controlKeyboardModal(e){
+  console.log(e.key);
+  switch (e.key) {
+    case "Escape":
+      closeModal() ;
+      break;
+  }
 }

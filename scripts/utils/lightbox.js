@@ -55,7 +55,7 @@ function closeLightbox() {
 }
 
 function controlKeyboard(e) {
-  console.log(e.key);
+  e.preventDefault();
   switch (e.key) {
     case "ArrowLeft":
       lightboxLeft();

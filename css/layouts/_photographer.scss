@@ -96,6 +96,7 @@
       align-items: center;
       font-size: 24px;
       overflow: hidden;
+      margin-top: 10px;
 
       h2 {
         width: auto;
@@ -115,18 +116,6 @@
   }
 }
 
-.logo::after {
-  content: "azeazeaze";
-  position: absolute;
-  display: block;
-  width: fit-content;
-  top: 12px;
-  left: 12px;
-  background-color: red;
-  color: #008766;
-  border-radius: 3px;
-}
-
 .photograph-sort-media {
   margin: 0 100px;
   display: flex;
@@ -137,10 +126,12 @@
   }
   .dropdown {
     list-style: none;
+
+
   }
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1439px) {
   .photograph-media {
     grid-template-columns: 1fr 1fr;
   }

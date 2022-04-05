@@ -52,7 +52,11 @@ async function displayMedia(media) {
 
     targetMedia.addEventListener("click", displayLightbox);
 
-    targetMedia.addEventListener("keyup", displayLightbox);
+    mediaCardDOM.addEventListener("keyup", function (e) {
+      if (e.key === "Enter") {
+        targetMedia.click();
+      }
+    });
   });
 }
 
@@ -91,6 +95,7 @@ async function init() {
   displayHeader(photographer);
   displayMedia(media);
   displayQuantities();
+  sortFocus();
   completeContactModalDOM(photographer);
 }
 

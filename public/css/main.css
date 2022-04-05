@@ -116,6 +116,7 @@
           align-items: center;
   font-size: 24px;
   overflow: hidden;
+  margin-top: 10px;
 }
 
 .photograph-media article .description h2 {
@@ -131,20 +132,6 @@
   margin-left: 10px;
   -webkit-filter: invert(17%) sepia(97%) saturate(1876%) hue-rotate(351deg) brightness(87%) contrast(87%);
           filter: invert(17%) sepia(97%) saturate(1876%) hue-rotate(351deg) brightness(87%) contrast(87%);
-}
-
-.logo::after {
-  content: "azeazeaze";
-  position: absolute;
-  display: block;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  top: 12px;
-  left: 12px;
-  background-color: red;
-  color: #008766;
-  border-radius: 3px;
 }
 
 .photograph-sort-media {
@@ -164,7 +151,7 @@
   list-style: none;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1439px) {
   .photograph-media {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
@@ -525,6 +512,10 @@
   z-index: 1;
 }
 
+.dropdown:focus-within * {
+  display: block;
+}
+
 .dropdown li {
   position: relative;
   padding: 20px 10px;
@@ -596,19 +587,19 @@
 
 .dropdown:hover #sort-popularity,
 .dropdown:hover #sort-date,
-.dropdown:hover #sort-title, .dropdown:focus #sort-popularity,
-.dropdown:focus #sort-date,
-.dropdown:focus #sort-title {
+.dropdown:hover #sort-title, .dropdown[data-show="true"] #sort-popularity,
+.dropdown[data-show="true"] #sort-date,
+.dropdown[data-show="true"] #sort-title {
   display: block;
 }
 
-.dropdown:hover li, .dropdown:focus li {
+.dropdown:hover li, .dropdown[data-show="true"] li {
   border-bottom-style: solid;
   border-width: 2px;
   border-color: white;
 }
 
-.dropdown:hover li:last-child, .dropdown:focus li:last-child {
+.dropdown:hover li:last-child, .dropdown[data-show="true"] li:last-child {
   border-bottom-style: none;
 }
 
@@ -637,7 +628,7 @@ a {
 }
 
 *:focus {
-  background-color: aqua;
+  background-color: coral;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
